@@ -13,6 +13,9 @@ run:
 	-v $(PICS):$(PICS) \
 	$(IMG) /bin/bash
 
+continue:
+	docker start -ai $(INST)
+
 clean:
 	docker rm -f $(shell docker ps -a | grep $(INST) | cut -b 1-12)
 
